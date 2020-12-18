@@ -41,9 +41,8 @@ class Homepage extends React.Component {
 
     componentDidMount = () => {
          try {
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            axios.get("http://localhost:8000/students")
+            axios.get("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/students")
+            //axios.get("http://localhost:8000/students")
             .then((response) => {
                 console.log(response.data);
                 this.setState({ alunos: response.data })

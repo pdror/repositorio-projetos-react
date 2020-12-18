@@ -30,8 +30,8 @@ class About extends React.Component {
 
     componentDidMount() {
         try {
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/about")
-            axios.get("http://localhost:8000/about")
+            axios.get("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/about")
+            //axios.get("http://localhost:8000/about")
                 .then((response) => {
                     this.setState({ about: response.data })
                 })

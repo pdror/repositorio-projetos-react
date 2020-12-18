@@ -64,7 +64,7 @@ const ProjectForm = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
         try {
-            axios.post("http://localhost:8000/projects", {
+            axios.post("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/projects", {
                 nome: values.nome,
                 descricao: values.descricao
             }, {

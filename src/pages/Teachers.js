@@ -41,9 +41,8 @@ class Teachers extends React.Component {
 
     componentDidMount = () => {
         try {
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/teachers")
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            axios.get("http://localhost:8000/teachers")
+            axios.get("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/teachers")
+            //axios.get("http://localhost:8000/teachers")
             .then((response) => {
                 console.log(response.data);
                 this.setState({ teachers: response.data })

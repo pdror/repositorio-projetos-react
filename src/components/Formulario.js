@@ -74,8 +74,8 @@ const Formulario = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
 
-        //axios.post("https://my-json-server.typicode.com/pdror/atv8-router/alunos", {
-        axios.post("http://localhost:8000/students", {
+        axios.post("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/students", {
+        //axios.post("http://localhost:8000/students", {
             nome: values.nome,
             idade: values.idade,
             cidade: values.cidade,

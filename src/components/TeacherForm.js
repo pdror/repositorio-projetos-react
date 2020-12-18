@@ -68,8 +68,8 @@ const TeacherForm = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
 
-        //axios.post("https://my-json-server.typicode.com/pdror/atv8-router/alunos", {
-        axios.post("http://localhost:8000/teachers", {
+        axios.post("https://my-json-server.typicode.com/pdror/repositorio-projetos-react/teachers", {
+        //axios.post("http://localhost:8000/teachers", {
             nome: values.nome,
             area: values.area,
             matricula: values.matricula,
