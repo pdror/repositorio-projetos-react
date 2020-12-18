@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+import purple from '@material-ui/core/colors/purple';
+import green from '@material-ui/core/colors/green';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import About from './pages/About';
+import Homepage from './pages/Homepage';
+import NovoAluno from './pages/NovoAluno';
+import Project from './pages/Projects';
+import NewProject from './pages/NewProject';
+import Teachers from './pages/Teachers';
 
-function App() {
+const App = () => {
+  const theme = createMuiTheme({
+    palette: {
+      primary: purple,
+      secondary: green,
+    },
+    typography: {
+      fontFamily: "Rubik",
+      h1: {
+        fontSize: "2.8em",
+      }
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Switch>
+        <Route path="/new" component={NovoAluno} />
+        <Route path="/about" component={About} />
+        <Route path="/projects" component={Project} />
+        <Route path="/new-project" component={NewProject} />
+        <Route path="/teachers" component={Teachers} />
+        <Route path="/login" component={LoginPage} />
+        <Route component={Homepage} />
+      </Switch>
+    </ThemeProvider>
   );
 }
 

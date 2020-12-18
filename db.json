@@ -1,0 +1,94 @@
+{
+    "students": [
+        {
+            "nome": "Pedro Henrique Ferreira Ramos",
+            "idade": "23",
+            "cidade": "Nova Floresta",
+            "cpf": "10634535420",
+            "complemento": "",
+            "curso": "computacao",
+            "estado": "PB",
+            "matricula": "161085040",
+            "bairro": "centro",
+            "cep": "58178000",
+            "endereco": "rua jose batista",
+            "numero": "480",
+            "id": 1
+        },
+        {
+            "nome": "Joyce Mikallea das Mercês Aciole",
+            "idade": "25",
+            "cidade": "Campina Grande",
+            "cpf": "75285978523",
+            "complemento": "",
+            "curso": "Computação",
+            "estado": "PB",
+            "matricula": "151085041",
+            "bairro": "Liberdade",
+            "cep": "55778123",
+            "endereco": "Rua dos Bosques",
+            "numero": "713",
+            "id": 2
+        },
+        {
+            "nome": "Rafael Medeiros",
+            "idade": "29",
+            "cidade": "Campina Grande",
+            "cpf": "75285968923",
+            "complemento": "",
+            "curso": "Computação",
+            "estado": "PB",
+            "matricula": "151085041",
+            "bairro": "Liberdade",
+            "cep": "55778123",
+            "endereco": "Rua Tal",
+            "numero": "1829",
+            "id": 3
+        },
+        {
+            "nome": "Otávio Clementino",
+            "idade": "24",
+            "cidade": "Campina Grande",
+            "cpf": "12385978523",
+            "complemento": "",
+            "curso": "Computação",
+            "estado": "PB",
+            "matricula": "161085041",
+            "bairro": "Centro",
+            "cep": "59189000",
+            "endereco": "Rua João Pessoa",
+            "numero": "823",
+            "id": 4
+        }
+    ],
+    "teachers": [
+        {
+            "nome": "Sabrina Souto",
+            "matricula": "201049231",
+            "area": "Engenharia de Software",
+            "formacao": "Engenharia da Computação"
+        },
+        {
+            "nome": "Ramon Bezerra",
+            "matricula": "202001161",
+            "area": "Programação WEB",
+            "formacao": "Ciência da Computação"
+        }
+    ],
+    "projects": [
+        {
+            "nome": "Projeto Teste I",
+            "descricao": "Testando rotas POST e formulário de Projeto",
+            "": ""
+        }
+    ],
+    "about": {
+        "descricao": "Aplicação web de visualização e cadastro de alunos feita com React, utilizando Material-UI, Formik, validação de dados com Yup e mais...",
+        "integrante1": "Joyce Mikaella",
+        "integrante2": "Pedro Ramos",
+        "integrante3": "Otávio Clementino",
+        "integrante4": "Rafael Medeiros",
+        "github": "https://github.com/pdror/atv8-router",
+        "server": "https://my-json-server.typicode.com/pdror/atv8-router/"
+    }
+}
