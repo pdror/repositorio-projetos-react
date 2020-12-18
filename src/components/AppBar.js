@@ -8,7 +8,8 @@ import {
   Drawer,
   ListItem,
   Divider,
-  List
+  List,
+  ListItemText
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
