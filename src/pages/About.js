@@ -30,7 +30,8 @@ class About extends React.Component {
 
     componentDidMount() {
         try {
-            axios.get("https://my-json-server.typicode.com/pdror/atv8-router/about")
+            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/about")
+            axios.get("http://localhost:8000/about")
                 .then((response) => {
                     this.setState({ about: response.data })
                 })
@@ -52,7 +53,7 @@ class About extends React.Component {
                         {this.state.about.descricao}
                     </Typography>
                     <Typography variant="h6">
-                        Equipe: {this.state.about.integrante1} e {this.state.about.integrante2}
+                        Equipe: {this.state.about.integrante1}, {this.state.about.integrante2}, {this.state.about.integrante3} e {this.state.about.integrante4} 
                     </Typography>
                     <Typography variant="h6">
                         Links úteis:

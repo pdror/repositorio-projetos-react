@@ -64,7 +64,7 @@ const ProjectForm = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
         try {
-            axios.post("http://localhost:5000/api/projects/add", {
+            axios.post("http://localhost:8000/projects", {
                 nome: values.nome,
                 descricao: values.descricao
             }, {

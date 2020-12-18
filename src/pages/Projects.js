@@ -43,7 +43,7 @@ class Homepage extends React.Component {
         try {
             //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
             //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            axios.get("http://localhost:5000/api/projects")
+            axios.get("http://localhost:8000/projects")
             .then((response) => {
                 this.setState({ projects: response.data })
             })
@@ -63,7 +63,7 @@ class Homepage extends React.Component {
                     </Box>
                     <List>
                         {this.state.projects.map((project) => (
-                            <div key={project._id}>
+                            <div key={project.id}>
                                 <ListItem>
                                     <ListItemIcon>
                                         <Avatar>

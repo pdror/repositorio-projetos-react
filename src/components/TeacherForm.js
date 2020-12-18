@@ -40,19 +40,13 @@ const useStyles = makeStyles((theme) => ({
 
 const schema = Yup.object().shape({
     nome: Yup.string().required("Campo obrigatório").min(10, "Muito curto"),
-    idade: Yup.number().required("Campo obrigatório").min(16, "Idade mínima de 16 anos"),
-    cpf: Yup.number().required("Campo obrigatório"),
     matricula: Yup.string().required("Campo obrigatório").min(9, "Formato inválido").max(9, "Formato inválido"),
-    curso: Yup.string().required("Campo obrigatório"),
-    endereco: Yup.string().required("Campo obrigatório"),
-    numero: Yup.number().optional(),
-    complemento: Yup.string().optional(),
-    bairro: Yup.string().required("Campo obrigatório"),
-    cidade: Yup.string().required("Campo obrigatório"),
-    cep: Yup.string().required("Campo obrigatório").min(8, "Formato inválido").max(8, "Formato inválido")
+    formacao: Yup.string().required("Campo obrigatório"),
+    area: Yup.string().required("Campo obrigatório"),
+    numero: Yup.number().optional()
 });
 
-const Formulario = () => {
+const TeacherForm = () => {
     const classes = useStyles();
 
     const MyTextField = ({ label, ...props }) => {
@@ -75,18 +69,11 @@ const Formulario = () => {
     const handleSubmit = (values, { setSubmitting }) => {
 
         //axios.post("https://my-json-server.typicode.com/pdror/atv8-router/alunos", {
-        axios.post("http://localhost:8000/students", {
+        axios.post("http://localhost:8000/teachers", {
             nome: values.nome,
-            idade: values.idade,
-            cidade: values.cidade,
-            cpf: values.cpf,
-            complemento: values.complemento,
-            curso: values.curso,
+            area: values.area,
             matricula: values.matricula,
-            bairro: values.bairro,
-            cep: values.cep,
-            endereco: values.endereco,
-            numero: values.numero
+            formacao: values.formacao
         }, {
             headers: {
                 'Accept': 'application/json',
@@ -103,16 +90,9 @@ const Formulario = () => {
     return (
         <Formik initialValues={{
             nome: '',
-            idade: '',
-            cpf: '',
             matricula: '',
-            curso: '',
-            endereco: '',
-            numero: '',
-            complemento: '',
-            bairro: '',
-            cidade: '',
-            cep: ''
+            formacao: '',
+            area: '',
         }}
             validationSchema={schema}
             onSubmit={handleSubmit}
@@ -120,27 +100,9 @@ const Formulario = () => {
             {({ values, isSubmitting }) => (
                 <Form>
                     <MyTextField label="Nome Completo*" name="nome" />
-                    <MyTextField label="Idade*" name="idade" />
-                    <MyTextField label="CPF*" name="cpf" />
                     <MyTextField label="Matrícula*" name="matricula" />
-                    <MyTextField label="Curso*" name="curso" />
-                    <MyTextField label="Endereço*" name="endereco" />
-                    <MyTextField label="Número" name="numero" />
-                    <MyTextField label="Complemento" name="complemento" />
-                    <MyTextField label="Bairro*" name="bairro" />
-                    <MyTextField label="Cidade*" name="cidade" />
-                    {/* <FormControl fullWidth>
-                                <InputLabel className={classes.inputLabel}>Estado</InputLabel>
-                                <Select fullWidth className={classes.select} variant="outlined" label="Estado" name="estado">
-                                    <MenuItem value="default" disabled>
-                                        Estado
-                                    </MenuItem>
-                                    {estadosArray.map(estado => (
-                                        <MenuItem key={estado.ID} value={estado.Sigla}>{estado.Nome}</MenuItem>
-                                    ))}
-                                </Select>
-                                </FormControl> */}
-                    <MyTextField label="CEP*" name="cep" />
+                    <MyTextField label="Formação*" name="formacao" />
+                    <MyTextField label="Área de atuação*" name="area" />
                     <Button type="submit" disabled={isSubmitting} color="primary">
                         Cadastrar
                     </Button>
@@ -150,4 +112,4 @@ const Formulario = () => {
     );
 }
 
-export default Formulario;
+export default TeacherForm;

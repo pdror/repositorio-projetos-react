@@ -10,6 +10,8 @@ import NovoAluno from './pages/NovoAluno';
 import Project from './pages/Projects';
 import NewProject from './pages/NewProject';
 import Teachers from './pages/Teachers';
+import TeacherForm from './components/TeacherForm';
+import NewTeacher from './pages/NewTeacher';
 
 const App = () => {
   const theme = createMuiTheme({
@@ -34,6 +36,7 @@ const App = () => {
         <Route path="/new-project" component={NewProject} />
         <Route path="/teachers" component={Teachers} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/new-teacher" component={NewTeacher} />
         <Route component={Homepage} />
       </Switch>
     </ThemeProvider>

@@ -34,19 +34,19 @@ class Teachers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            alunos: [],
+            teachers: [],
         }
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount = () => {
         try {
+            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/teachers")
             //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            axios.get("http://localhost:5000/api/teachers")
+            axios.get("http://localhost:8000/teachers")
             .then((response) => {
                 console.log(response.data);
-                this.setState({ alunos: response.data })
+                this.setState({ teachers: response.data })
             })
         } catch (err) {
             console.log(err);
@@ -63,27 +63,26 @@ class Teachers extends React.Component {
                         <Typography variant="h1" color="primary" style={{ fontWeight: 500 }}>Professores</Typography>
                     </Box>
                     <List>
-                        {this.state.alunos.map((aluno) => (
-                            <div key={aluno._id}>
+                        {this.state.teachers.map((teacher) => (
+                            <div key={teacher.id}>
                                 <ListItem>
                                     <ListItemIcon>
                                         <Avatar>
                                             <AccountCircle />
                                         </Avatar>
                                     </ListItemIcon>
-                                    <ListItemText primary={aluno.name} secondary={
+                                    <ListItemText primary={teacher.nome} secondary={
                                         <React.Fragment>
                                             <Typography
                                                 component="span"
                                                 variant="body2"
                                             >
-                                                Matrícula: {aluno.matricula}, CPF: {aluno.cpf}
+                                                Matrícula: {teacher.matricula}
                                                 <br />
-                                        Curso: {aluno.curso}
+                                        Formação: {teacher.formacao}
                                                 <br />
-                                        Idade: {aluno.idade}
+                                        Área: {teacher.area}
                                                 <br />
-                                        Localização: {aluno.cidade} - {aluno.estado}, {aluno.cep}
                                             </Typography>
                                         </React.Fragment>
                                     } />
@@ -93,7 +92,7 @@ class Teachers extends React.Component {
                         ))}
 
                     </List>
-                    <Link to="/new">
+                    <Link to="/new-teacher">
                         <AddButton />
                     </Link>
                 </Container>

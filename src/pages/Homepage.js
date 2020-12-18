@@ -40,22 +40,18 @@ class Homepage extends React.Component {
     }
 
     componentDidMount = () => {
-        /* try {
+         try {
             //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
             //axios.get("https://my-json-server.typicode.com/pdror/atv8-router/alunos")
-            axios.get("http://localhost:5000/api/students",{
-                headers: {
-                    "Authorization": "Bearer " + localStorage.getItem("token"),
-                }
-            })
+            axios.get("http://localhost:8000/students")
             .then((response) => {
                 console.log(response.data);
                 this.setState({ alunos: response.data })
             })
         } catch (err) {
             console.log(err);
-        } */
-        fetch("http://localhost:5000/api/students", {
+        }
+        /* fetch("http://localhost:5000/api/students", {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
@@ -68,7 +64,7 @@ class Homepage extends React.Component {
             })
             .catch((err) => {
               console.log(err);
-            });
+            }); */
     }
 
     render() {
@@ -82,14 +78,14 @@ class Homepage extends React.Component {
                     </Box>
                     <List>
                         {this.state.alunos.map((aluno) => (
-                            <div key={aluno._id}>
+                            <div key={aluno.id}>
                                 <ListItem>
                                     <ListItemIcon>
                                         <Avatar>
                                             <AccountCircle />
                                         </Avatar>
                                     </ListItemIcon>
-                                    <ListItemText primary={aluno.name} secondary={
+                                    <ListItemText primary={aluno.nome} secondary={
                                         <React.Fragment>
                                             <Typography
                                                 component="span"
