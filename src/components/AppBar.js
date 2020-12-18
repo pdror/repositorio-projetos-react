@@ -3,17 +3,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
-import { MenuIcon, MailIcon } from '@material-ui/icons';
 import { 
   makeStyles,
   Drawer,
   ListItem,
-  ListItemIcon,
-  ListItemText,
   Divider,
-  List,
-  IconButton,
-  Button
+  List
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ButtonAppBar from '../components/AppBar';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { FormatLineSpacing } from '@material-ui/icons';
 import { useHistory } from "react-router-dom";
 import { TextField, Button, makeStyles, FormControl, Container } from '@material-ui/core';
 import { Formik, Form, useField } from 'formik';
@@ -70,7 +68,7 @@ const LoginPage = () => {
                 .then(res => {
                     if(res.status === 200) {
                         localStorage.setItem('token', res.data.token)
-                        //history.push("/");
+                        history.push("/");
                     } else {
                         const error = new Error(res.error);
                         throw error;

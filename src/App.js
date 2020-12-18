@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import About from './pages/About';
 import Homepage from './pages/Homepage';
@@ -10,7 +10,6 @@ import NovoAluno from './pages/NovoAluno';
 import Project from './pages/Projects';
 import NewProject from './pages/NewProject';
 import Teachers from './pages/Teachers';
-import TeacherForm from './components/TeacherForm';
 import NewTeacher from './pages/NewTeacher';
 
 const App = () => {
